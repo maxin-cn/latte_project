@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="LAVITA: Latent Video Diffusion Models with Spatio-temporal Transformers.">
+  <meta name="keywords" content="Diffusion, Video Generation, Transformers">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LAVITA: Latent Video Diffusion Models with Spatio-temporal Transformers</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+    <section class="hero">
+        <div class="hero-body">
+      <!--    <div class="container is-max-desktop">-->
+            <div class="container is-fullhd">
+            <div class="columns is-centered">
+              <div class="column has-text-centered">
+                <h1 class="title is-1 publication-title">LAVITA: Latent Video Diffusion Models with Spatio-temporal Transformers</h1>
+                <div class="is-size-5 publication-authors">
+                    
+                    <span class="author-block">
+                    <a href="https://maxin-cn.github.io/">Xin Ma</a><sup>1,2&Dagger;</sup>,</span>
+                    <span class="author-block">
+                    <a href="https://wyhsirius.github.io/">Yaohui Wang</a><sup>2&dagger;</sup>,</span>
+                    <span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=3fWSC8YAAAAJ">Xinyuan Chen</a><sup>2</sup>,</span>
+                    <span class="author-block">
+                    <a href="https://users.monash.edu/~yli/">Yuan-Fang Li</a><sup>1</sup>,</span>
+                    <span class="author-block">
+                    <!-- <a href="https://cunjian.github.io/">Cunjian Chen</a><sup>1&dagger;</sup>,</span> -->
+                    <a href="https://cunjian.github.io/">Cunjian Chen</a><sup>1</sup>,</span>
+                    <span class="author-block">
+                    <a href="https://scholar.google.com.hk/citations?user=gFtI-8QAAAAJ&hl=zh-CN">Yu Qiao</a><sup>1</sup>,</span>
+                    <span class="author-block">
+                    <a href="https://liuziwei7.github.io/">Ziwei Liu</a><sup>2,3</sup></span>
+                </div>
+      
+                <div class="is-size-5 publication-authors">
+                    <span class="author-block"><sup>1</sup>Department of Data Science & AI, Faculty of Information Technology, Monash University</span> <br>
+                    <span class="author-block"><sup>2</sup>Shanghai Artificial Intelligence Laboratory&nbsp</span>
+                    <span class="author-block"><sup>3</sup>S-Lab, Nanyang Technological University&nbsp</span>
+                  
+                </div>
+      
+                  <div class="is-size-6 publication-authors">
+                  <!-- <span class="author-block"><sup>*</sup>Equal contribution</span> <span class="author-block"><sup>&dagger;</sup>Corresponding author</span> -->
+                  <span class="author-block"> <span class="author-block"><sup>&dagger;</sup>Corresponding author</span>
+                </div>
+      
+                  <div class="is-size-6 publication-authors">
+                  <span class="author-block"><sup>&Dagger;</sup>Work done during internship at Shanghai AI Laboratory</span>
+                </div>
+      
+                <div class="column has-text-centered">
+                  <div class="publication-links">
+                    <!-- PDF Link. -->
+                    <span class="link-block">
+                      <a href="https://arxiv.org/abs/2309.15103"
+                         class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+                    <span class="link-block">
+                      <a href="https://arxiv.org/abs/2309.15103"
+                         class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                            <i class="ai ai-arxiv"></i>
+                        </span>
+                        <span>arXiv</span>
+                      </a>
+                    </span>
+                    <!-- Video Link. -->
+      <!--               <span class="link-block">
+                      <a href=""
+                         class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                            <i class="fab fa-youtube"></i>
+                        </span>
+                        <span>Video</span>
+                      </a>
+                    </span> -->
+                    <!-- Code Link. -->
+                    <span class="link-block">
+                      <a href="https://github.com/maxin-cn/LAVITA"
+                         class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                            <i class="fab fa-github"></i>
+                        </span>
+                        <span>Code</span>
+                        </a>
+                    </span>
+      
+                  </div>
+      
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+		<center>
+      		<img src="static/images/architecture.svg" title="" style="max-width:80%;vertical-align:top"/>
+		</center>
+    </div>
+  </div>
+</section>
+
+
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-toby">
+          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/segment/0-0-A white duck.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/canny/0-0-road in space, van Gogh style.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/depth/0-0-a purple jellyfish.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/pose/21-60-The Astronaut, brown background.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-toby">
+          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/segment/horse.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/canny/0-0-road at night, oil painting style.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/depth/0-0-an ostritch.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-toby">
+          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/pose/62-53-The Astronaut, brown background.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Video generation is a challenging task as it requires effective modeling of rich spatio-temporal information from high-dimensional video data. To tackle this challenge, we propose a novel architecture, the LAtent VIdeo diffusion model with spatio-temporal TrAnsformers, referred to as LAVITA, which integrates the Transformer architecture into diffusion models for the first time within the realm of video generation. Conceptually, LATIVA models spatial and temporal information separately to accommodate their inherent disparities as well as to reduce the computational complexity. Following this design strategy, we design several Transformer-based model variants to integrate spatial and temporal information harmoniously. Moreover, we identify the best practices in architectural choices and learning strategies for LAVITA through rigorous empirical analysis. Our comprehensive evaluation demonstrates that LAVITA achieves state-of-the-art performance across several standard video generation benchmarks, including FaceForensics, SkyTimelapse, UCF101, and Taichi-HD, outperforming current best models. We strongly believe that LAVITA provides valuable insights for future research on incorporating Transformers into diffusion models for video generation.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="section">
+    <div class="container is-max-desktop">
+  
+      <!-- Animation. -->
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Results</h2>
+  
+          <!-- Customed Videos. -->
+          <h3 class="title is-4">Unconditional generation</h3>
+          <div class="content has-text-justified">
+            <p>
+              Unconditional video generation on the Taichi-HD (256 x 256), FaceForensics (256 x 256) and SkyTimelapse (256 x 256) datasets. 
+            </p>
+          </div>
+          <div class="content has-text-centered">
+  
+          <div class="video-container">
+              <!-- First video -->
+              <div class="video">
+                <video poster="" id="toby" autoplay controls muted loop playsinline width="100%">
+                  <source src="./static/videos/taichi-grid.mp4"
+                          type="video/mp4">
+                </video>
+                <div class="video-description">
+                  <p>Taichi-HD</p>
+                </div>
+              </div>
+          
+              <!-- Second video -->
+              <div class="video">
+                <video poster="" id="toby" autoplay controls muted loop playsinline width="100%">
+                  <source src="./static/videos/ffs-grid.mp4"
+                          type="video/mp4">
+                </video>
+                <div class="video-description">
+                  <p>FaceForensics </p>
+                </div>
+              </div>
+
+            <!-- Third video -->
+            <div class="video">
+                <video poster="" id="toby" autoplay controls muted loop playsinline width="100%">
+                  <source src="./static/videos/sky-grid.mp4"
+                          type="video/mp4">
+                </video>
+                <div class="video-description">
+                  <p>SkyTimelapse</p>
+                </div>
+              </div>
+          </div>
+</section>
+
+<section class="section">
+    <div class="container is-max-desktop">
+  
+      <!-- Animation. -->
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <!-- <h2 class="title is-3">Results</h2> -->
+  
+          <!-- Customed Videos. -->
+          <h3 class="title is-4">Conditional generation based on classes</h3>
+          <div class="content has-text-justified">
+            <p>
+              Given the class, LAVITA is able to generate the desired videos. Results are shown on the UCF101 (256 x 256) datasets.  
+            </p>
+          </div>
+          <div class="content has-text-centered">
+  
+          <div class="video-container">
+              <!-- First video -->
+              <div class="video">
+                <video poster="" id="toby" autoplay controls muted loop playsinline width="50%">
+                  <source src="./static/videos/ucf-grid.mp4"
+                          type="video/mp4">
+                </video>
+                <div class="video-description">
+                  <p>UCF101</p>
+                </div>
+              </div>
+          </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <!-- <h2 class="title is-3">Results</h2> -->
+
+        <!-- Customed Videos. -->
+        <h3 class="title is-4">Conditional generation based on prompts</h3>
+        <div class="content has-text-justified">
+            <p>
+              Results are shown by using LAVITA to generate disered videos. Results are shown on the Webv2m datasets and a subset of Laion5B (comprising approximately 6,400,000 images).
+            </p>
+          </div>
+        <div class="content has-text-centered">
+
+        <div class="video-container">
+            <!-- First video -->
+            <div class="video">
+              <video poster="" id="toby" autoplay controls muted loop playsinline width="100%">
+                <source src="./static/videos/webv2m-004-grid.mp4"
+                        type="video/mp4">
+              </video>
+              <div class="video-description">
+                <p>Decorate with pineapple sweet cake roll.</p>
+              </div>
+            </div>
+        
+            <!-- Second video -->
+            <div class="video">
+              <video poster="" id="toby" autoplay controls muted loop playsinline width="100%">
+                <source src="./static/videos/webv2m-028-grid.mp4"
+                        type="video/mp4">
+              </video>
+              <div class="video-description">
+                <p>Reeds in the wind, razim lake, romania.</p>
+              </div>
+            </div>
+        </div>
+
+        <div class="video-container">
+          <!-- First video -->
+          <div class="video">
+            <video poster="" id="toby" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/webv2m-100-grid.mp4"
+                      type="video/mp4">
+            </video>
+            <div class="video-description">
+              <p>Slow pan upward of blazing oak fire in an indoor fireplace.</p>
+            </div>
+          </div>
+      
+          <!-- Second video -->
+          <div class="video">
+            <video poster="" id="toby" autoplay controls muted loop playsinline width="100%">
+              <source src="./static/videos/webv2m-154-grid.mp4"
+                      type="video/mp4">
+            </video>
+            <div class="video-description">
+              <p>Flight over the country.</p>
+            </div>
+          </div>
+      </div>
+      <div class="video-container">
+        <!-- First video -->
+        <div class="video">
+          <video poster="" id="toby" autoplay controls muted loop playsinline width="100%">
+            <source src="./static/videos/webv2m-158-grid.mp4"
+                    type="video/mp4">
+          </video>
+          <div class="video-description">
+            <p>Sunset over the sea.</p>
+          </div>
+        </div>
+    
+        <!-- Second video -->
+        <div class="video">
+          <video poster="" id="toby" autoplay controls muted loop playsinline width="100%">
+            <source src="./static/videos/webv2m-099-grid.mp4"
+                    type="video/mp4">
+          </video>
+          <div class="video-description">
+            <p>Lagoon in aerial view.</p>
+          </div>
+        </div>
+      </div>
+        </div>
+</section>
+
+<section class="section">
+    <div class="container is-max-desktop">
+  
+      <!-- Animation. -->
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+  
+          <!-- Customed Videos. -->
+          <h3 class="title is-4">Compare with other state-of-the-art</h3>
+          <div class="content has-text-justified">
+            <p>
+              Visual comparison with other state-of-the-art on UCF101, Taichi-HD, FaceForensics and SkyTimelapse datasets, respectively.
+            </p>
+          </div>
+
+            <h3 class="title is-5">UCF101</h3>
+            <!-- <div class="content has-text-centered"> -->
+            <div class="content has-text-centered">
+            <div class="video-container">
+                <!-- First video -->
+                <div class="video">
+                  <video poster="" id="toby" autoplay controls muted loop playsinline width="95%">
+                    <source src="./static/videos/ucf-pvdm-grid.mp4"
+                            type="video/mp4">
+                  </video>
+                  <div class="video-description">
+                    <p>PVDM</p>
+                  </div>
+                </div>
+            </div>
+
+            <div class="video-container">
+                <!-- First video -->
+                <div class="video">
+                  <video poster="" id="toby" autoplay controls muted loop playsinline width="95%">
+                    <source src="./static/videos/ucf-ours-grid.mp4"
+                            type="video/mp4">
+                  </video>
+                  <div class="video-description">
+                    <p>Ours</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+            
+            <!-- # taichi -->
+            <h3 class="title is-5">Taichi-HD</h3>
+            <div class="content has-text-centered">
+            <div class="video-container">
+                <!-- First video -->
+                <div class="video">
+                  <video poster="" id="toby" autoplay controls muted loop playsinline width="95%">
+                    <source src="./static/videos/taichi-digan-grid.mp4"
+                            type="video/mp4">
+                  </video>
+                  <div class="video-description">
+                    <p>DIGAN</p>
+                  </div>
+                </div>
+            </div>
+
+            <div class="video-container">
+                <!-- First video -->
+                <div class="video">
+                  <video poster="" id="toby" autoplay controls muted loop playsinline width="95%">
+                    <source src="./static/videos/taichi-pvdm-grid.mp4"
+                            type="video/mp4">
+                  </video>
+                  <div class="video-description">
+                    <p>PVDM</p>
+                  </div>
+                </div>
+            </div>
+
+            <div class="video-container">
+                <!-- First video -->
+                <div class="video">
+                  <video poster="" id="toby" autoplay controls muted loop playsinline width="95%">
+                    <source src="./static/videos/taichi-ours-grid.mp4"
+                            type="video/mp4">
+                  </video>
+                  <div class="video-description">
+                    <p>Ours</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+        
+            
+            <!-- # ffs -->
+            <h3 class="title is-5">FaceForensics</h3>
+            <div class="content has-text-centered">
+                <div class="video-container">
+                    <!-- First video -->
+                    <div class="video">
+                      <video poster="" id="toby" autoplay controls muted loop playsinline width="95%">
+                        <source src="./static/videos/ffs-stylegan-v-grid.mp4"
+                                type="video/mp4">
+                      </video>
+                      <div class="video-description">
+                        <p>StyleGAN-V</p>
+                      </div>
+                    </div>
+                </div>
+
+                <div class="video-container">
+                    <!-- First video -->
+                    <div class="video">
+                      <video poster="" id="toby" autoplay controls muted loop playsinline width="95%">
+                        <source src="./static/videos/ffs-pvdm-grid.mp4"
+                                type="video/mp4">
+                      </video>
+                      <div class="video-description">
+                        <p>PVDM</p>
+                      </div>
+                    </div>
+                </div>
+
+                <div class="video-container">
+                    <!-- First video -->
+                    <div class="video">
+                      <video poster="" id="toby" autoplay controls muted loop playsinline width="95%">
+                        <source src="./static/videos/ffs-ours-grid.mp4"
+                                type="video/mp4">
+                      </video>
+                      <div class="video-description">
+                        <p>Ours</p>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+    
+            <h3 class="title is-5">SkyTimelapse</h3>
+            <div class="content has-text-centered">
+                <div class="video-container">
+                    <!-- First video -->
+                    <div class="video">
+                      <video poster="" id="toby" autoplay controls muted loop playsinline width="95%">
+                        <source src="./static/videos/sky-stylegan-v-grid.mp4"
+                                type="video/mp4">
+                      </video>
+                      <div class="video-description">
+                        <p>StyleGAN-V</p>
+                      </div>
+                    </div>
+                </div>
+
+                <div class="video-container">
+                    <!-- First video -->
+                    <div class="video">
+                      <video poster="" id="toby" autoplay controls muted loop playsinline width="95%">
+                        <source src="./static/videos/sky-pvdm-grid.mp4"
+                                type="video/mp4">
+                      </video>
+                      <div class="video-description">
+                        <p>PVDM</p>
+                      </div>
+                    </div>
+                </div>
+
+                <div class="video-container">
+                    <!-- First video -->
+                    <div class="video">
+                      <video poster="" id="toby" autoplay controls muted loop playsinline width="95%">
+                        <source src="./static/videos/sky-ours-grid.mp4"
+                                type="video/mp4">
+                      </video>
+                      <div class="video-description">
+                        <p>Ours</p>
+                      </div>
+                    </div>
+                </div>
+            </div>
+</section>
+
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{peng2023conditionvideo,
+      title={ConditionVideo: Training-Free Condition-Guided Text-to-Video Generation}, 
+      author={Bo Peng and Xinyuan Chen and Yaohui Wang and Chaochao Lu and Yu Qiao},
+      year={2023},
+      eprint={2310.07697},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}</code></pre>
+  </div>
+</section> -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
