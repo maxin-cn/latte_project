@@ -1,6 +1,6 @@
 # Condition Video
 
-This is the repository that contains source code for the [CLAVITA website](https://pengbo807.github.io/conditionvideo-website/).
+This is the repository that contains source code for the [LAVITA website](https://pengbo807.github.io/conditionvideo-website/).
 
 If you find conditionvideo useful for your work please cite:
 ```
