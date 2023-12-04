@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="LAVITA: Latent Video Diffusion Models with Spatio-temporal Transformers.">
+        content="DiffuSynth: Advanced Diffusion Video Synthesis with Transformer.">
   <meta name="keywords" content="Diffusion, Video Generation, Transformers">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LAVITA: Latent Video Diffusion Models with Spatio-temporal Transformers</title>
+  <title>DiffuSynth: Advanced Diffusion Video Synthesis with Transformer</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -49,7 +49,7 @@
             <div class="container is-fullhd">
             <div class="columns is-centered">
               <div class="column has-text-centered">
-                <h1 class="title is-1 publication-title">LAVITA: Latent Video Diffusion Models with Spatio-temporal Transformers</h1>
+                <h1 class="title is-1 publication-title">DiffuSynth: Advanced Diffusion Video Synthesis with Transformer</h1>
                 <div class="is-size-5 publication-authors">
                     
                     <span class="author-block">
@@ -215,7 +215,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Video generation is a challenging task as it requires effective modeling of rich spatio-temporal information from high-dimensional video data. To tackle this challenge, we propose a novel architecture, the LAtent VIdeo diffusion model with spatio-temporal TrAnsformers, referred to as LAVITA, which integrates the Transformer architecture into diffusion models for the first time within the realm of video generation. Conceptually, LATIVA models spatial and temporal information separately to accommodate their inherent disparities as well as to reduce the computational complexity. Following this design strategy, we design several Transformer-based model variants to integrate spatial and temporal information harmoniously. Moreover, we identify the best practices in architectural choices and learning strategies for LAVITA through rigorous empirical analysis. Our comprehensive evaluation demonstrates that LAVITA achieves state-of-the-art performance across several standard video generation benchmarks, including FaceForensics, SkyTimelapse, UCF101, and Taichi-HD, outperforming current best models. We strongly believe that LAVITA provides valuable insights for future research on incorporating Transformers into diffusion models for video generation.
+            Video generation is a challenging task, as it requires effective modeling of the rich spatio-temporal information within high-dimensional video data. To address this issue, we propose a novel method, Advanced Diffusion Video Synthesis with Transformer, referred to as DiffuSynth, which integrates the Transformer architecture into diffusion models for video generation. Specifically, DiffuSynth enables an image-oriented Transformer as the backbone to capture the spatial and temporal information of videos. This is achieved by simply modifying the forward propagation, without any changes to network structure, and it also reduces computational complexity. To further improve the quality of generated videos, we determine the best practices of DiffuSynth through rigorous experimental analysis (including the learning strategies, temporal positional embedding, image-video joint training, etc.). Our comprehensive evaluation demonstrates that DiffuSynth achieves state-of-the-art performance across several standard video generation benchmarks, including FaceForensics, SkyTimelapse, UCF101, and Taichi-HD, outperforming current best models. In addition, we extend DiffuSynth to the text-to-video (T2V) domain, where DiffuSynth also achieves remarkable results compared to the current leading T2V models. We strongly believe that DiffuSynth provides valuable insights for future research on incorporating Transformers into diffusion models for video generation.
           </p>
         </div>
       </div>
@@ -463,11 +463,11 @@
                 <!-- First video -->
                 <div class="video">
                   <video poster="" id="toby" autoplay controls muted loop playsinline width="95%">
-                    <source src="./static/videos/taichi-pvdm-grid.mp4"
+                    <source src="./static/videos/lvdm-taichi-grid.mp4"
                             type="video/mp4">
                   </video>
                   <div class="video-description">
-                    <p>PVDM</p>
+                    <p>LVDM</p>
                   </div>
                 </div>
             </div>
