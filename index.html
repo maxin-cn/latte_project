@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="DiffuSynth: Advanced Diffusion Video Synthesis with Transformer.">
+        content="Latte: Latent Diffusion Transformer for Video Generation.">
   <meta name="keywords" content="Diffusion, Video Generation, Transformers">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DiffuSynth: Advanced Diffusion Video Synthesis with Transformer</title>
+  <title>Latte: Latent Diffusion Transformer for Video Generation</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -49,7 +49,7 @@
             <div class="container is-fullhd">
             <div class="columns is-centered">
               <div class="column has-text-centered">
-                <h1 class="title is-1 publication-title">DiffuSynth: Advanced Diffusion Video Synthesis with Transformer</h1>
+                <h1 class="title is-1 publication-title">Latte: Latent Diffusion Transformer for Video Generation</h1>
                 <div class="is-size-5 publication-authors">
                     
                     <span class="author-block">
@@ -58,6 +58,8 @@
                     <!-- <a href="https://wyhsirius.github.io/">Yaohui Wang</a><sup>2&dagger;</sup>,</span> -->
                     <a href="https://wyhsirius.github.io/">Yaohui Wang</a><sup>2</sup>,</span>
                     <span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=_04pkGgAAAAJ&hl=zh-CN">Gengyun Jia</a><sup>3</sup>,</span>
+                    <span class="author-block">
                     <a href="https://scholar.google.com/citations?user=3fWSC8YAAAAJ">Xinyuan Chen</a><sup>2</sup>,</span>
                     <span class="author-block">
                     <a href="https://users.monash.edu/~yli/">Yuan-Fang Li</a><sup>1</sup>,</span>
@@ -65,7 +67,7 @@
                     <!-- <a href="https://cunjian.github.io/">Cunjian Chen</a><sup>1&dagger;</sup>,</span> -->
                     <a href="https://cunjian.github.io/">Cunjian Chen</a><sup>1</sup>,</span>
                     <span class="author-block">
-                    <a href="https://liuziwei7.github.io/">Ziwei Liu</a><sup>2,3</sup></span>
+                    <a href="https://liuziwei7.github.io/">Ziwei Liu</a><sup>2,4</sup></span>
                     <span class="author-block">
                     <a href="https://scholar.google.com.hk/citations?user=gFtI-8QAAAAJ&hl=zh-CN">Yu Qiao</a><sup>2</sup>,</span>
                 </div>
@@ -73,7 +75,8 @@
                 <div class="is-size-5 publication-authors">
                     <span class="author-block"><sup>1</sup>Department of Data Science & AI, Faculty of Information Technology, Monash University</span> <br>
                     <span class="author-block"><sup>2</sup>Shanghai Artificial Intelligence Laboratory&nbsp</span>
-                    <span class="author-block"><sup>3</sup>S-Lab, Nanyang Technological University&nbsp</span>
+                    <span class="author-block"><sup>3</sup>Nanjing University of Posts and Telecommunications&nbsp</span>
+                    <span class="author-block"><sup>4</sup>S-Lab, Nanyang Technological University&nbsp</span>
                   
                 </div>
       
@@ -90,7 +93,7 @@
                   <div class="publication-links">
                     <!-- PDF Link. -->
                     <span class="link-block">
-                      <a href="https://github.com/maxin-cn/LAVITA"
+                      <a href="https://github.com/maxin-cn/Latte"
                          class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                             <i class="fas fa-file-pdf"></i>
@@ -99,7 +102,7 @@
                       </a>
                     </span>
                     <span class="link-block">
-                      <a href="https://github.com/maxin-cn/LAVITA"
+                      <a href="https://github.com/maxin-cn/Latte"
                          class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                             <i class="ai ai-arxiv"></i>
@@ -119,7 +122,7 @@
                     </span> -->
                     <!-- Code Link. -->
                     <span class="link-block">
-                      <a href="https://github.com/maxin-cn/LAVITA"
+                      <a href="https://github.com/maxin-cn/Latte"
                          class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                             <i class="fab fa-github"></i>
@@ -215,7 +218,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Video generation is a challenging task, as it requires effective modeling of the rich spatio-temporal information within high-dimensional video data. To address this issue, we propose a novel method, Advanced Diffusion Video Synthesis with Transformer, referred to as DiffuSynth, which integrates the Transformer architecture into diffusion models for video generation. Specifically, DiffuSynth enables an image-oriented Transformer as the backbone to capture the spatial and temporal information of videos. This is achieved by simply modifying the forward propagation, without any changes to network structure, and it also reduces computational complexity. To further improve the quality of generated videos, we determine the best practices of DiffuSynth through rigorous experimental analysis (including the learning strategies, temporal positional embedding, image-video joint training, etc.). Our comprehensive evaluation demonstrates that DiffuSynth achieves state-of-the-art performance across several standard video generation benchmarks, including FaceForensics, SkyTimelapse, UCF101, and Taichi-HD, outperforming current best models. In addition, we extend DiffuSynth to the text-to-video (T2V) domain, where DiffuSynth also achieves remarkable results compared to the current leading T2V models. We strongly believe that DiffuSynth provides valuable insights for future research on incorporating Transformers into diffusion models for video generation.
+            Video generation is a challenging task, as it requires effective modeling of the rich spatio-temporal information within high-dimensional video data. To address this issue, we propose a novel method, Latent Diffusion Transformer for Video Generation, referred to as Latte. Specifically, Latte enables an image-oriented Transformer as the backbone to capture the spatial and temporal information of videos while keeping the original network structure unchanged. This is achieved by alternately using the Transformer block to learn the spatial and temporal information in videos respectively and it also reduces computational complexity. To further improve the quality of generated videos, we determine the best practices of Latte through rigorous experimental analysis (including the learning strategies, temporal positional embedding, image-video joint training, etc.). Our comprehensive evaluation demonstrates that Latte achieves state-of-the-art performance across several standard video generation benchmarks, including FaceForensics, SkyTimelapse, UCF101, and Taichi-HD, outperforming current best models. In addition, we extend Latte to the text-to-video (T2V) domain, where Latte also achieves remarkable results compared to the current leading T2V models. We strongly believe that Latte provides valuable insights for future research on incorporating Transformers into diffusion models for video generation
           </p>
         </div>
       </div>
@@ -289,7 +292,7 @@
           <h3 class="title is-4">Conditional generation based on classes</h3>
           <div class="content has-text-justified">
             <p>
-              Given the class, LAVITA is able to generate the desired videos. Results are shown on the UCF101 (256 x 256) datasets.  
+              Given the class, Latte is able to generate the desired videos. Results are shown on the UCF101 (256 x 256) datasets.  
             </p>
           </div>
           <div class="content has-text-centered">
@@ -320,7 +323,7 @@
         <h3 class="title is-4">Conditional generation based on prompts</h3>
         <div class="content has-text-justified">
             <p>
-              Results are shown by using LAVITA to generate disered videos. Results are shown on the Webv2m datasets and a subset of Laion5B (comprising approximately 6,400,000 images).
+              Results are shown by using Latte to generate disered videos.
             </p>
           </div>
         <div class="content has-text-centered">
@@ -329,22 +332,22 @@
             <!-- First video -->
             <div class="video">
               <video poster="" id="toby" autoplay controls muted loop playsinline width="100%">
-                <source src="./static/videos/webv2m-004-grid.mp4"
+                <source src="./static/videos/t2v-1-grid.mp4"
                         type="video/mp4">
               </video>
               <div class="video-description">
-                <p>Decorate with pineapple sweet cake roll.</p>
+                <p>Yellow and black tropical fish dart through the sea.</p>
               </div>
             </div>
         
             <!-- Second video -->
             <div class="video">
               <video poster="" id="toby" autoplay controls muted loop playsinline width="100%">
-                <source src="./static/videos/webv2m-028-grid.mp4"
+                <source src="./static/videos/t2v-0-grid.mp4"
                         type="video/mp4">
               </video>
               <div class="video-description">
-                <p>Reeds in the wind, razim lake, romania.</p>
+                <p>An epic tornado attacking above aglowing city at night.</p>
               </div>
             </div>
         </div>
@@ -353,7 +356,7 @@
           <!-- First video -->
           <div class="video">
             <video poster="" id="toby" autoplay controls muted loop playsinline width="100%">
-              <source src="./static/videos/webv2m-100-grid.mp4"
+              <source src="./static/videos/t2v-2-grid.mp4"
                       type="video/mp4">
             </video>
             <div class="video-description">
@@ -364,11 +367,11 @@
           <!-- Second video -->
           <div class="video">
             <video poster="" id="toby" autoplay controls muted loop playsinline width="100%">
-              <source src="./static/videos/webv2m-154-grid.mp4"
+              <source src="./static/videos/t2v-3-grid.mp4"
                       type="video/mp4">
             </video>
             <div class="video-description">
-              <p>Flight over the country.</p>
+              <p>a cat wearing sunglasses and working as a lifeguard at pool.</p>
             </div>
           </div>
       </div>
@@ -376,7 +379,7 @@
         <!-- First video -->
         <div class="video">
           <video poster="" id="toby" autoplay controls muted loop playsinline width="100%">
-            <source src="./static/videos/webv2m-158-grid.mp4"
+            <source src="./static/videos/t2v-4-grid.mp4"
                     type="video/mp4">
           </video>
           <div class="video-description">
@@ -387,11 +390,11 @@
         <!-- Second video -->
         <div class="video">
           <video poster="" id="toby" autoplay controls muted loop playsinline width="100%">
-            <source src="./static/videos/webv2m-099-grid.mp4"
+            <source src="./static/videos/t2v-5-grid.mp4"
                     type="video/mp4">
           </video>
           <div class="video-description">
-            <p>Lagoon in aerial view.</p>
+            <p>A chihuahua in astronaut suit, sunglasses floating in space.</p>
           </div>
         </div>
       </div>
