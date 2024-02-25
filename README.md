@@ -1,14 +1,12 @@
-# Condition Video
-
 This is the repository that contains source code for the [Latte website](https://maxin-cn.github.io/latte_project/).
 
 If you find conditionvideo useful for your work please cite:
 ```
-@article{TODO
-  author    = {TODO},
-  title     = {TODO},
-  journal   = {TODO},
-  year      = {2023},
+@article{ma2024latte,
+  title={Latte: Latent Diffusion Transformer for Video Generation},
+  author={Ma, Xin and Wang, Yaohui and Jia, Gengyun and Chen, Xinyuan and Liu, Ziwei and Li, Yuan-Fang and Chen, Cunjian and Qiao, Yu},
+  journal={arXiv preprint arXiv:2401.03048},
+  year={2024}
 }
 ```
 
